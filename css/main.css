@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #ecf8ff;
+  display: grid;
+  place-items: center;
+  height: 100dvh;
+  font-family: "Source Sans 3", sans-serif;
+}
+body.debug * {
+  outline: 1px solid red;
+}
+
+.card {
+  max-width: 601px;
+  padding: 35px 31px;
+  background-color: white;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  box-shadow: 0 15px 60px rgba(29, 161, 242, 0.15);
+}
+.card .card__header {
+  display: flex;
+  justify-content: space-between;
+}
+.card .card__user-wrapper {
+  display: flex;
+  -moz-column-gap: 22px;
+       column-gap: 22px;
+}
+.card .card__user-wrapper .card__image-wrapper {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  overflow: hidden;
+}
+.card .card__user-wrapper .card__image-wrapper:hover img {
+  filter: brightness(0.8);
+  -webkit-filter: brightness(0.8);
+}
+.card .card__user-wrapper .card__image-wrapper img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.card .card__user-wrapper .card__user-info-wrapper .card__name {
+  font-size: 18px;
+  font-weight: 700;
+}
+.card .card__user-wrapper .card__user-info-wrapper .card__username {
+  color: rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+}
+.card .card__user-wrapper .card__user-info-wrapper .card__username:before {
+  content: "@";
+  display: inline-block;
+}
+.card .card__user-wrapper .card__user-info-wrapper .card__username:hover {
+  text-decoration: underline;
+}
+.card .card__body {
+  margin: 15px 0;
+}
+.card .card__tweet-wrapper {
+  line-height: 26px;
+}
+.card .card__tweet-wrapper .card__tweet-tags-wrapper {
+  list-style: none;
+  display: inline;
+}
+.card .card__tweet-wrapper .card__tweet-tags-wrapper li {
+  display: inline-block;
+}
+.card .card__tweet-wrapper .card__tweet-tags-wrapper li .card__tweet-tag {
+  color: hwb(203 11% 5%);
+  text-decoration: none;
+}
+.card .card__tweet-wrapper .card__tweet-tags-wrapper li .card__tweet-tag:before {
+  content: "#";
+  display: inline;
+}
+.card .card__tweet-wrapper .card__tweet-tags-wrapper li .card__tweet-tag:hover {
+  text-decoration: underline;
+  text-decoration-color: #1da1f2;
+  -moz-text-decoration-color: #1da1f2;
+}
+.card .card__footer {
+  display: flex;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+.card .card__footer .card__like-wrapper {
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  align-items: start;
+}
+.card .card__footer .card__like-wrapper .card__like {
+  background-color: transparent;
+  border: none;
+}
+.card .card__footer .card__like-wrapper .card__like.liked svg {
+  fill: #1da1f2;
+  animation: liked 300ms;
+}
+.card .card__footer .card__like-wrapper .card__like.liked svg path {
+  stroke: #1da1f2;
+}
+.card .card__footer .card__like-wrapper .card__like.not-liked svg {
+  fill: none;
+  animation: notLiked 300ms;
+}
+.card .card__footer .card__like-wrapper .card__like.not-liked svg path {
+  stroke: #000;
+}
+.card .card__footer .card__like-wrapper .card__like svg:hover {
+  cursor: pointer;
+}
+.card .card__footer .card__like-wrapper .card__likes-total {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+}
+.card .card__footer .card__datetime {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+@keyframes liked {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+}
+@keyframes notLiked {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+}
+@media (width < 768px) {
+  body {
+    padding: 24px;
+  }
+}/*# sourceMappingURL=main.css.map */
